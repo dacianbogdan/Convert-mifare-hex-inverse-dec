@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123b36">
+  <meta name="description" content="Convertește local UID-ul HEX MIFARE de 4 octeți în număr DEC, cu inversarea octeților.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Card Converter">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Hikvision Card Converter</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="./" aria-label="Card Converter, pagina principală"><span class="brand-icon" aria-hidden="true">↔</span> CARD CONVERTER</a><span class="tag">MIFARE · 4 OCTEȚI</span></header>
+    <section class="intro"><p class="eyebrow">HIKVISION CARD CONVERTER</p><h1>Din HEX în DEC.<br>Într-o clipă.</h1><p>Introdu UID-ul cardului. Inversăm octeții și calculăm numărul zecimal, direct pe telefon.</p></section>
+    <section class="converter" aria-label="Conversie UID">
+      <form id="converter-form" novalidate>
+        <label for="uid">UID HEX <span>4 octeți / 8 caractere HEX</span></label>
+        <input id="uid" name="uid" type="text" placeholder="5D:B0:F6:D2" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="go" aria-describedby="input-hint input-error">
+        <p id="input-hint" class="hint">Cu două puncte, cratimă, spațiu sau fără separatori.</p>
+        <p id="input-error" class="error" role="alert" hidden></p>
+        <div class="actions"><button type="submit" class="primary">Convertește <span aria-hidden="true">→</span></button><button type="button" id="example" class="secondary">Încearcă exemplul</button></div>
+      </form>
+      <div class="result" id="result" aria-live="polite" aria-atomic="true">
+        <div class="result-heading"><span>NUMĂR DECIMAL</span><span id="result-state">Rezultatul tău</span></div>
+        <output id="decimal" for="uid">—</output>
+        <p id="byte-order">Rezultatul apare aici după conversie.</p>
+        <button type="button" id="copy" class="copy" disabled>Copiază numărul</button>
+        <p id="copy-status" class="hint" role="status"></p>
+      </div>
+      <div class="privacy"><span aria-hidden="true">✓</span><p>UID-ul rămâne pe dispozitiv.<br><span>Fără cont, fără istoric, fără trimitere la server.</span></p></div>
+    </section>
+    <section class="install"><div><p class="eyebrow">MEREU LA ÎNDEMÂNĂ</p><h2>Un instrument mic. Oriunde ai nevoie.</h2><p id="offline-status" role="status">Se pregătește utilizarea offline…</p></div><button type="button" id="install" class="secondary">Instalează aplicația <span aria-hidden="true">↗</span></button></section>
+    <details id="install-help"><summary>Instalare pe Android / iPhone</summary><div class="instructions"><p><strong>Android:</strong> deschide adresa HTTPS în Chrome. Apasă „Instalează aplicația” sau folosește meniul ⋮ → „Instalează aplicația” / „Adaugă pe ecranul de pornire”.</p><p><strong>iPhone:</strong> deschide adresa HTTPS în Safari → Partajare → „Adăugați la ecranul principal” → „Adăugați”. Dacă apare „Deschidere ca aplicație web”, lasă opțiunea activată.</p><p>Deschide aplicația instalată o dată cu internet și așteaptă mesajul „Pregătită pentru utilizare offline”. Apoi o poți folosi fără conexiune. Dacă ștergi datele browserului, încarcă din nou aplicația cu internet.</p></div></details>
+    <footer><p>HEX → octeți inversați → DEC</p><p>Instrument independent. Nu citește și nu emulează carduri NFC.</p></footer>
+    <noscript>Activează JavaScript pentru conversie și utilizare offline.</noscript>
+  </main>
+</body>
+</html>

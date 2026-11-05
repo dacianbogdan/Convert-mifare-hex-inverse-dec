@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Hikvision Card Converter",
+  "short_name": "Card Converter",
+  "description": "UID HEX MIFARE de 4 octeți în DEC, prin inversarea octeților. Local și offline.",
+  "lang": "ro",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5ef",
+  "theme_color": "#123b36",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
